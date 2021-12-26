@@ -1,30 +1,37 @@
+#ifndef MEAN_AND_VARIANCE_H_INCLUDED
+#define MEAN_AND_VARIANCE_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
 #include <math.h>
-double mean(int a[],int n)//定义mean函数
+double mean(int a[],int n);//mean函数用于计算均值
+double var(int random[],double u,int n);//var函数用于计算方差
+
+double mean(double *p,int n)//定义mean函数
 {
     int i;//定义输入
     double average,sum=0;//定义输入average存放平均数，sum存放和
     for(i=0;i<n;i++)
     {
-        sum=sum+a[i];//累加
+        sum+=*(p+i);//累加
     }
     average=sum/n;//算平均数
+
     return average;//返回结果
 }
 
-double var(int random[],double u,int n)//定义var函数
+double var(double *p,double u,int n)//定义var函数
 {
     double va;
     double sum=0;//定义输入sum，初始值为0
-int k;
-{
-    for(k=0;k<n;++k)
-    sum=sum+pow(random[k]-u,2);//调用幂函数计算pow（random[k]-u，2）计算random[k]-u的2次方求和
-}
-va=sum/(n-1);//计算va
+    int k;
 
-return va;//返回va值
+    for(k=0;k<n;k++){
+    sum=sum+pow(*(p+k)-u,2);//计算σ^2*n
+    }
+    va=sum/n;//计算va
+
+    return va;//返回va值
 }
+
+
+#endif // MEAN_AND_VARIANCE_H_INCLUDED
