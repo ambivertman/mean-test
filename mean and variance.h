@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<time.h>
-#include<unistd.h>
-#include<math.h>
+#include <time.h>
+#include <unistd.h>
+#include <math.h>
 double mean(int a[],int n)//定义mean函数
 {
     int i;//定义输入
