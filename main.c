@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
-#include <math.h>
-#include "mean and variance.h"
+#include<time.h>
+#include<unistd.h>
+#include<math.h>
+#include"mean and variance.h"
 double mean(int a[],int n);//mean函数原型说明
 double var(int random[],double u,int n);//var函数原型说明
 int main()
